@@ -10,4 +10,4 @@ async def hello(uri):
         await websocket.send("quit")
 
 asyncio.get_event_loop().run_until_complete(
-    hello('ws://54.217.120.39:8765'))
+    hello('ws://192.168.99.100:8765'))
