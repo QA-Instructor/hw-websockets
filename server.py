@@ -14,13 +14,14 @@ async def echo(websocket, path):
         if message == "quit" :
             eventLoop.stop()
 
-print("waiting for data...")
-wsFuture = websockets.serve(echo, 'localhost', 8765) 
-# schedule echo() to run
-eventLoop.run_until_complete( wsFuture )
+def init_service():
+    print("waiting for data...")
+    wsFuture = websockets.serve(echo, '0.0.0.0', 8765) 
+    # schedule echo() to run
+    eventLoop.run_until_complete( wsFuture )
 
-# run all waiting tasks
-eventLoop.run_forever()
-print("run forever terminated")
+    # run all waiting tasks
+    eventLoop.run_forever()
+    print("run forever terminated")
 
 
