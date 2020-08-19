@@ -16,7 +16,7 @@ async def echo(websocket, path):
 
 def init_service():
     print("waiting for data...")
-    wsFuture = websockets.serve(echo, '0.0.0.0', 8765) 
+    wsFuture = websockets.serve(echo, '0.0.0.0', 8080) 
     # schedule echo() to run
     eventLoop.run_until_complete( wsFuture )
 
